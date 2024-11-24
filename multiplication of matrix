@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+int main(){
+    cout<<"enter the dimmensions of the matrices:rows of a,coloum of a ,coloum of b:"<<"\n";
+    int n ,m ,p;
+    cin>>n>>m>>p;
+    int a[n][m], b[m][p], c[n][p] ={0};
+    for (int i=0;i<n;i++){
+        for (int j=0;j<m;j++){
+            cin>>a[i][j];
+        }
+    }
+    for (int i=0;i<m;i++){
+        for (int j=0;j<p;j++){
+            cin>>b[i][j];
+        }
+    }
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < p; ++j) {
+            for (int k = 0; k < m; ++k) {
+                C[i][j] += A[i][k] * B[k][j];
+            }
+        }
+    }
+    cout << "Resultant Matrix C:\n";
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < p; ++j) {
+            cout << c[i][j] << " ";
+        }
+        cout << endl;
+    } cout<<a;
+}
