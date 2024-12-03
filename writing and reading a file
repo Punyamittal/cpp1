@@ -1,0 +1,28 @@
+#include <iostream>
+#include <fstream> // For file handling
+using namespace std;
+
+int main() {
+    ofstream outFile("example.txt");
+    if (outFile.is_open()) {
+        outFile << "Hello, File Handling in C++!" << endl;
+        outFile << "This is a test file." << endl;
+        outFile.close();
+        cout << "Data written to file successfully." << endl;
+    } else {
+        cout << "Unable to open file for writing." << endl;
+    }
+    ifstream inFile("example.txt");
+    if (inFile.is_open()) {
+        string line;
+        cout << "Reading data from file:" << endl;
+        while (getline(inFile, line)) {
+            cout << line << endl;
+        }
+        inFile.close();
+    } else {
+        cout << "Unable to open file for reading." << endl;
+    }
+
+    return 0;
+}
